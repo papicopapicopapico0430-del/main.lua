@@ -18,6 +18,7 @@ function LoadMainScript()
     local Tab1 = Window:MakeTab({Name = "頂上", Icon = "rbxassetid://4483362458"})
     local Tab2 = Window:MakeTab({Name = "みそらタワー", Icon = "rbxassetid://4483362458"})
     local Tab3 = Window:MakeTab({Name = "マグマが上がってくるタワー", Icon = "rbxassetid://4483362458"})
+    local Tab4 = Window:MakeTab({Name = "開発用", Icon = "rbxassetid://4483362458"})
 
     -- 固定座標テレポート
     Tab2:AddButton({
@@ -56,7 +57,7 @@ function LoadMainScript()
                 -- Workspace内をスキャン
                 for _, obj in pairs(game.Workspace:GetDescendants()) do
                     if table.find(targetNames, obj.Name) and obj:IsA("BasePart") then
-                        target = obj
+                        target = object
                         break -- 最初に見つかった1つで停止
                     end
                 end
@@ -84,7 +85,12 @@ Tab3:AddButton({
         loadstring(game:HttpGet("https://pastebin.com/raw/09025Qs5"))()
     end    
 })
-end
+Tab4:AddButton({
+    Name = "座標",
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/2RkwMiLp"))()
+    end    
+})
 -- [[ キー認証タブ ]]
 local KeyTab = Window:MakeTab({Name = "Key🔑", Icon = "rbxassetid://4483362458"})
 
